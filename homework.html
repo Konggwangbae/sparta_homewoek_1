@@ -1,56 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
-
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-
-            crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 
-    <title>DPR LIVE | 팬 명록</title>
+
+    <title>DPR LIVE - 팬명록</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <style>
+
         * {
-
-            font-family: 'single day', cursive;
-
+           font-family: 'Single Day', cursive;
         }
 
         .mypic {
-
             width: 100%;
             height: 300px;
 
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://pbs.twimg.com/media/ETORNvjUYAA7mVv?format=jpg&name=small);
-            background-position: center;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://pbs.twimg.com/media/ETORNvjUYAA7mVv?format=jpg&name=small');
+            background-position: center 50%;
             background-size: cover;
 
             color: white;
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
 
         .mypost {
-            max-width: 500px;
             width: 95%;
+            max-width: 500px;
             margin: 20px auto 20px auto;
 
             box-shadow: 0px 0px 3px 0px black;
@@ -59,6 +56,7 @@
 
         .mypost > button {
             margin-top: 15px;
+        }
 
         .mycards {
             width: 95%;
@@ -76,44 +74,57 @@
 </head>
 
 <body>
+
     <div class="mypic">
-        <h1>DPR LIVE | 팬명록</h1>
+        <h1>DPR LIVE - 팬명록</h1>
     </div>
+
     <div class="mypost">
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">닉네임</label>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="url">
+            <label for="floatingInput">닉네임</label>
         </div>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">응원 댓글</label>
+            <textarea class="form-control" placeholder="Leave a comment here" id="comment"
+                      style="height: 100px"></textarea>
+            <label for="floatingTextarea2">응원 댓글</label>
         </div>
-        <div class="mycards">
-            <button type="button" class="btn btn-outline-primary">응원 남기기</button>
-        </div>
-        <div class="mycards" id="comment-list">
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0"><p>새로운 앨범 너무 멋져요!</p>
-                        <footer class="blockquote-footer">팔뚝만 마동석</footer>
-                    </blockquote>
-                </div>
+        <button onclick="save_comment()" type="button" class="btn btn-outline-info">응원 남기기</button>
+    </div>
+    <div class="mycards" id="comment-list">
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>새로운 <strong>앨범</strong>에 너 <strong>납치</strong>된거야.</p>
+                <footer class="blockquote-footer">강해상</footer>
+                </blockquote>
             </div>
-            <div class="mycards" id="comment-list">
-                <div class="card">
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0"><p>다들 너무 잘 생겼어요!</p>
-                            <footer class="blockquote-footer">오나미</footer>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="mycards" id="comment-list">
-                    <div class="card">
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0"><p>새로운 앨범에 너 납치 된거야.</p>
-                                <footer class="blockquote-footer">강해상</footer>
-                            </blockquote>
-                        </div>
-                    </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p>박스 안에 <strong>"padding"</strong> 맥여도 <u>"변화"</u>가 없어서 <br>코딩 한테 2시간동안 납치 된거야..😭😭😭😭</br></p>
+                    <footer class="blockquote-footer">공광배</footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>또 <strong>"우리 귀"</strong> 즐겁게 해주네~ <br><strong>멋쟁이네</strong> 진짜 이쒸~👍</p>
+                <footer class="blockquote-footer">장이수</footer>
+            </blockquote>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p><strong>"바다"</strong>에서 <strong>돌고래</strong>🐬를 보며 들으면 좋을거 같습니다.</p>
+                <footer class="blockquote-footer">별똥별 토마토 스위스 우영우 역삼역?</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
